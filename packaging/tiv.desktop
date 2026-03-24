@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=tiv (Image Viewer)
+Comment=Minimal GUI image viewer with next/previous navigation
+Exec=tiv %f
+Terminal=false
+Type=Application
+Categories=Graphics;Viewer;
+Icon=tiv
+MimeType=image/png;image/jpeg;image/jpg;image/webp;image/bmp;image/gif;image/tiff;

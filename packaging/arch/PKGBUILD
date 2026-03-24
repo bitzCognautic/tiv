@@ -1,0 +1,25 @@
+# Maintainer: (local)
+
+pkgname=tiv
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Minimal GTK image viewer with next/previous navigation"
+arch=('x86_64' 'aarch64')
+url="https://example.invalid/tiv"
+license=('Unlicense')
+depends=('gtk4' 'gdk-pixbuf2')
+optdepends=()
+makedepends=('make' 'gcc')
+source=("${pkgname}-${pkgver}.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}" PREFIX=/usr install
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
